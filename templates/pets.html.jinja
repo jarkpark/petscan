@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<style>
+ul, li {display: block; list-style: none; margin: 0; padding: 0;}
+ul {background: #fff;}
+li {line-height: 50px; width: 100%; text-align: center; background: #66f; margin: 5px;}
+li.tiles ul li {width: 33%; float: left; margin: 5px 0; background: none;}
+li.tiles ul {overflow: hidden;}
+li.tiles {text-align: left; margin: 0;}
+a {color: #fff; text-decoration: none; display: block; background: #66f; margin: 5px;}
+</style>
+<html lang="en">
+<head>
+    <title>Pets!</title>
+</head>
+
+<h1>Pets!</h1>
+
+<body>
+    <ul id="navigation">
+    {% for pet in pet_data %}
+        <li class="tiles">
+            <ul>
+                <li><img src="{{ pet['picture'] }}"></li>
+                <li>{{ pet['name'] }}</li>
+                <li>{{ pet['gender'] }}</li>
+                <li>{{ pet['breed'] }}</li>
+                <li>{{ pet['age'] }}</li>
+                <li>{{ pet['weight'] }}</li>
+                <li><a href="{{ pet['page'] }}">Click Here for Details</a></li>
+            </ul>
+        </li>
+    {% endfor %}
+    </ul>
+
+
+    {# a comment #}
+</body>
+</html>
